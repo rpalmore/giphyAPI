@@ -3,7 +3,8 @@ you need to create an array of strings, each one
 related to a topic that interests you. 
 Save it to a variable called topics.*/
 
-var topics = ["San Francisco", "New York", "Tokyo", "Paris", "London", "Chicago"]
+var topics = ["San Francisco", "New York", "Tokyo", "Paris", 
+              "London", "Chicago", "Amsterdam", "Copenhagen"]
 
 /*Your app should take the topics in this array and create buttons 
 in your HTML. Try using a loop that appends a button for 
@@ -28,6 +29,20 @@ function createButtons() {
     // Added the button to the buttons-view div
     $("#cityButtons").append(button);
    }
+
+   // Adding in button hover elements
+$("button").hover(function(){
+    $(this).css("background-color", "#18c8e4");
+    }, function(){
+    $(this).css("background-color", "white");
+ });
+
+ // And some fun link hover decoration
+$("a").hover(function(){
+    $(this).css("background-color", "#18c8e4");
+     }, function(){
+    $(this).css("background-color", "white");
+ });
 }
 
 createButtons();
@@ -62,14 +77,11 @@ function displayCityInfo() {
     var imgURL = results[i].images.fixed_width_still.url;
     var gifURL = results[i].images.fixed_width.url;
 
-
-    console.log(imgURL);
     // Creates an element to hold the image
     var cityImage = $("<img>").attr("src", imgURL).addClass("gif")
                               .attr("data-state", imgURL)
                               .attr("data-still", imgURL)
                               .attr("data-animate", gifURL);
-    console.log(cityImage);
 
 	// Appends the image
 	cityDiv.append(cityImage);
@@ -103,24 +115,20 @@ it should stop playing.
 and adds it into your topics array. Then make a function call that 
 takes each topic in the array and remakes the buttons on the page.*/
 
-// hint: 030917 >> working-movie-app-solved.html
+// This function handles events where a city button is clicked
+$("#add-city").on("click", function(event) {
+    event.preventDefault();
+    // This line grabs the input from the textbox
+    var newCity = $("#city-input").val().trim();
+
+    // Adding movie from the textbox to our array
+    topics.push(newCity);
+
+    // Calling renderButtons which handles the processing of our movie array
+    createButtons();
+});
 
 
 // Adding a click event listener to all elements with a class of "city"
    // $(document).on("click", ".city", displayCityInfo);
-      $("#cityButtons").on("click", ".city", displayCityInfo);
-
-
-// Adding in button hover elements
-$("button").hover(function(){
-    $(this).css("background-color", "#18c8e4");
-    }, function(){
-    $(this).css("background-color", "white");
- });
-
- // And some fun link hover decoration
-$("a").hover(function(){
-    $(this).css("background-color", "#18c8e4");
-     }, function(){
-    $(this).css("background-color", "white");
- });working-movie-app-solved.html
+$("#cityButtons").on("click", ".city", displayCityInfo);
