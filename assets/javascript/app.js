@@ -60,30 +60,36 @@ function displayCityInfo() {
 	cityDiv.append(p);
 	// Retrieving the URL for the image
     var imgURL = results[i].images.fixed_width_still.url;
+    var gifURL = results[i].images.fixed_width.url;
+
 
     console.log(imgURL);
     // Creates an element to hold the image
-    var cityImage = $("<img>").attr("src", imgURL).addClass("gif data-state");
+    var cityImage = $("<img>").attr("src", imgURL).addClass("gif")
+                              .attr("data-state", imgURL)
+                              .attr("data-still", imgURL)
+                              .attr("data-animate", gifURL);
+    console.log(cityImage);
 
 	// Appends the image
 	cityDiv.append(cityImage);
     // Puts the entire city above the previous city.
-     $("#cityGifs").prepend(cityDiv);
+    $("#cityGifs").prepend(cityDiv);
 
-    // var still = results[i].images.fixed_width_still.url;
-    // var animate = results[i].images.fixed_width.url;
+/* When the user clicks one of the still GIPHY images, the gif 
+should animate. If the user clicks the gif again, 
+it should stop playing.
+*/
 
-        $(".gif").on("click", function() {
-
-        console.log("Whoopie!");
+    $(".gif").on("click", function() {
 
         var state = $(this).attr("data-state");
         console.log(this);
 
         if (state === "still") {
-        $(this).attr("src", $(this).attr("animate"));
+        $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
-      } else {
+        } else {
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
         }
@@ -93,25 +99,11 @@ function displayCityInfo() {
     });
 }
 
-/* When the user clicks one of the still GIPHY images, the gif 
-should animate. If the user clicks the gif again, 
-it should stop playing.
-*/
+/*Add a form to your page that takes the value from a user input box 
+and adds it into your topics array. Then make a function call that 
+takes each topic in the array and remakes the buttons on the page.*/
 
-
-
-
-  // <img src=
-  // "http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" 
-  // data-still=
-  // "http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" 
-  // data-animate=
-  // "http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200.gif" 
-  // data-state=
-  // "still" class="gif">
-
-
-
+// hint: 030917 >> working-movie-app-solved.html
 
 
 // Adding a click event listener to all elements with a class of "city"
@@ -131,4 +123,4 @@ $("a").hover(function(){
     $(this).css("background-color", "#18c8e4");
      }, function(){
     $(this).css("background-color", "white");
- });
+ });working-movie-app-solved.html
