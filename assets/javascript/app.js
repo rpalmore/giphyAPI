@@ -19,7 +19,7 @@ function createButtons() {
     // This code $("<button>") is all jQuery needs to 
     // create the beginning and end tag. (<button></button>)
     var button = $("<button>");
-    // Adds a class of movie to our button
+    // Adds a class of city to our button
     button.addClass("city");
     // Added a data-attribute
     button.attr("data-name", topics[i]);
@@ -59,19 +59,65 @@ function displayCityInfo() {
 	// Displays the rating
 	cityDiv.append(p);
 	// Retrieving the URL for the image
-	var imgURL = results[i].images.fixed_width_still.url;
+    var imgURL = results[i].images.fixed_width_still.url;
+
+    console.log(imgURL);
     // Creates an element to hold the image
-    var cityImage = $("<img>").attr("src", imgURL);
+    var cityImage = $("<img>").attr("src", imgURL).addClass("gif data-state");
+
 	// Appends the image
 	cityDiv.append(cityImage);
     // Puts the entire city above the previous city.
      $("#cityGifs").prepend(cityDiv);
+
+    // var still = results[i].images.fixed_width_still.url;
+    // var animate = results[i].images.fixed_width.url;
+
+        $(".gif").on("click", function() {
+
+        console.log("Whoopie!");
+
+        var state = $(this).attr("data-state");
+        console.log(this);
+
+        if (state === "still") {
+        $(this).attr("src", $(this).attr("animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+        }
+
+        });
  }
     });
 }
 
+/* When the user clicks one of the still GIPHY images, the gif 
+should animate. If the user clicks the gif again, 
+it should stop playing.
+*/
+
+
+
+
+  // <img src=
+  // "http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" 
+  // data-still=
+  // "http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" 
+  // data-animate=
+  // "http://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200.gif" 
+  // data-state=
+  // "still" class="gif">
+
+
+
+
+
 // Adding a click event listener to all elements with a class of "city"
-   $(document).on("click", ".city", displayCityInfo);
+   // $(document).on("click", ".city", displayCityInfo);
+      $("#cityButtons").on("click", ".city", displayCityInfo);
+
 
 // Adding in button hover elements
 $("button").hover(function(){
