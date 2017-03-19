@@ -122,7 +122,7 @@ takes each topic in the array and remakes the buttons on the page.*/
 $("#add-city").on("click", function(event) {
     event.preventDefault();
     // This line grabs the input from the textbox
-    var newCity = $("#city-input").val().trim();
+    var newCity = $("#city-input").val().trim().toUpperCase();
 
     // Adding movie from the textbox to our array
     topics.push(newCity);
