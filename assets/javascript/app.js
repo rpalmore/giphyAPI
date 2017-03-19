@@ -14,7 +14,7 @@ function createButtons() {
     }
 
    $("button").hover(function(){
-        $(this).css("background-color", "#18c8e4");
+        $(this).css("background-color", "#7ac943");
         }, function(){
         $(this).css("background-color", "buttonface");
     });
@@ -79,10 +79,4 @@ $("a").hover(function(){
     $(this).css("background-color", "#18c8e4");
 	}, function(){
         $(this).css("background-color", "white");
-});
-
-$("#add-city").hover(function(){
-    $(this).css("background-color", "#e5aa52");
-    }, function(){
-        $(this).css("background-color", "buttonface");
 });
