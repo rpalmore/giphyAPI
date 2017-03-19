@@ -27,7 +27,7 @@ function createButtons() {
     // Added a data-attribute
     button.attr("data-name", topics[i]);
     // Provided the initial button text
-    button.text(topics[i]);
+    button.text(topics[i]).addClass("capitalize");
     // Added the button to the buttons-view div
     $("#cityButtons").append(button);
    }
@@ -55,7 +55,7 @@ non-animated gif images from the GIPHY API and place them on the page.*/
 function displayCityInfo() {
 
     var city = $(this).attr("data-name");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + 
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + 
         city + "&api_key=dc6zaTOxFJmzC&limit=10";
    
     // Creates AJAX call for the specific city button being clicked
@@ -122,7 +122,7 @@ takes each topic in the array and remakes the buttons on the page.*/
 $("#add-city").on("click", function(event) {
     event.preventDefault();
     // This line grabs the input from the textbox
-    var newCity = $("#city-input").val().trim().toUpperCase();
+    var newCity = $("#city-input").val().trim();
 
     // Adding movie from the textbox to our array
     topics.push(newCity);
@@ -134,3 +134,10 @@ $("#add-city").on("click", function(event) {
 
 // Adding a click event listener to all elements with a class of "city"
 $("#cityButtons").on("click", ".city", displayCityInfo);
+
+// testing search bar
+
+$("#clear").click(function(event){
+    event.preventDefault();
+    $("#city-input").val("").focus();
+});

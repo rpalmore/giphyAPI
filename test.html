@@ -14,7 +14,7 @@
 <body>
 
 	<div class="container-fluid">
-			<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default">
   			<div class="container-fluid">
     			<div class="navbar-header">
       				<a class="navbar-brand" href="https://thawing-journey-23840.herokuapp.com/" target="_blank">Rebecca Palmore
@@ -35,7 +35,7 @@
 		</nav>
 
 		<header>
-			Global GIFs TEST
+			Global GIFs 
 				<i class="fa fa-suitcase fa-1x" aria-hidden="true"></i>
 		</header>
 
@@ -46,26 +46,41 @@
 		<div id="line">
 		</div>
 
-		<div class="left col-xs-8">
+		<div class="main col-md-10 col-md-offset-1 text-center">
+
 		<div id="cityButtons">
 		</div>
-		</div>
 
-		<div class="right col-xs-3 col-xs-offset-1">
-			<form class="form-inline text-center">
+		<form class="form-inline text-center">
+			<div class="form-group">
+      			<label for="city-input">Add a destination</label>
+      			<input type="text" class="form-control" id="city-input" placeholder="My destination"><a href="search/clear" id="clear">Clear results</a>
+      		</div>
+    		<button id="add-city" type="submit">Let's go!</button>
+		</form>
+
+		<!--testing below -->
+
+<!-- 			<form class="form-inline text-center">
 				<div class="form-group">
       				<label for="city-input">Add a destination</label>
-      				<input type="text" class="form-control" id="city-input" placeholder="My destination">
+      				<input type="text" class="form-control" id="city-input" placeholder="My destination"><a href="search/clear" id="clear">Clear results</a>
       			</div>
     			<button id="add-city" type="submit">Let's go!</button>
-			</form>
-		</div>
+			</form> -->
+
+<!-- 		<input type="text" name="search" id="city-input" placeholder="My destination"/><a href="search/clear" id="clear">Clear results</a> -->
+
+		<!--end of test-->
 
 
 		<div id="cityGifs">
 		</div>
 	</div>
 
+	</div>
+
 <script src="assets/javascript/app.js"></script>
 </body>
 </html>
+
