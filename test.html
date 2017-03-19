@@ -51,19 +51,14 @@
 		<div id="cityButtons">
 		</div>
 
-		<form class="form-inline text-center">
-			<div class="form-group">
-      			<label for="city-input">Add a destination</label>
-      			<input type="text" class="form-control" id="city-input" placeholder="My destination">
-      				<div id="image1"></div>
-      				<div id="image2"></div>
-      		</div>
-    		<button id="add-city" type="submit">Let's go!</button>
-		</form>
 
 
-		<label for="search-basic">Search Input:</label>
-		<input type="search" name="search" id="search-basic" value="" />
+		<div class="search-wrapper">
+			<form>
+				<input type="text" name="focus" required class="search-box" placeholder="Enter search term" />
+				<button class="close-icon" type="reset"></button>
+			</form>
+		</div>
 
 
 		<div id="cityGifs">
