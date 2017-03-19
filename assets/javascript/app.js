@@ -3,8 +3,10 @@ you need to create an array of strings, each one
 related to a topic that interests you. 
 Save it to a variable called topics.*/
 
-var topics = ["San Francisco", "New York", "Tokyo", "Paris", 
-              "London", "Chicago", "Amsterdam", "Copenhagen"]
+var topics = ["San Francisco", "New York City", "Tokyo", "Paris", 
+              "London", "Chicago", "Amsterdam", "Copenhagen",
+              "Detroit", "Italy", "Moscow", "Hawaii", "The Moon", "Singapore",
+              "Mexico City", "Area 51"]
 
 /*Your app should take the topics in this array and create buttons 
 in your HTML. Try using a loop that appends a button for 
@@ -34,7 +36,7 @@ function createButtons() {
 $("button").hover(function(){
     $(this).css("background-color", "#18c8e4");
     }, function(){
-    $(this).css("background-color", "white");
+    $(this).css("background-color", "buttonface");
  });
 
  // And some fun link hover decoration
@@ -67,16 +69,17 @@ function displayCityInfo() {
     // Creates a div to hold the city
     var cityDiv = $("<div class='city'>");
     // Retrieves the Rating Data
-    // console.log(response);
     var rating = results[i].rating;
     // Creates an element to have the rating displayed
     var p = $("<p>").text("Rating: " + rating);
 	// Displays the rating
 	cityDiv.append(p);
 	// Retrieving the URL for the image
-    var imgURL = results[i].images.fixed_width_still.url;
-    var gifURL = results[i].images.fixed_width.url;
+    var imgURL = results[i].images.fixed_height_still.url;
+    var gifURL = results[i].images.fixed_height.url;
 
+    // var imgURL = results[i].images.fixed_width_still.url;
+    // var gifURL = results[i].images.fixed_width.url;
     // Creates an element to hold the image
     var cityImage = $("<img>").attr("src", imgURL).addClass("gif")
                               .attr("data-state", imgURL)
@@ -84,7 +87,7 @@ function displayCityInfo() {
                               .attr("data-animate", gifURL);
 
 	// Appends the image
-	cityDiv.append(cityImage);
+	cityDiv.prepend(cityImage);
     // Puts the entire city above the previous city.
     $("#cityGifs").prepend(cityDiv);
 
@@ -130,5 +133,4 @@ $("#add-city").on("click", function(event) {
 
 
 // Adding a click event listener to all elements with a class of "city"
-   // $(document).on("click", ".city", displayCityInfo);
 $("#cityButtons").on("click", ".city", displayCityInfo);
