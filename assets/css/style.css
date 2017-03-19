@@ -60,12 +60,8 @@ label {
     width: 16px;
     height: 16px;
     display: inline-block;
-    background-image: url(https://p.yusukekamiyamane.com/icons/search/fugue/icons/cross.png);
-    background-repeat: no-repeat;
+	background-image: url("wrong.png");
     position: relative;
     left: -20px;
     top: 3px;
 }
-
-
-
