@@ -38,22 +38,28 @@ function displayGifs() {
 			cityDiv.append(p);
     		var imgURL = results[i].images.fixed_height_still.url;
     		var gifURL = results[i].images.fixed_height.url;
-    		var cityImage = $("<img>").attr("src", imgURL).addClass("gif")
-                              		  .attr("data-state", imgURL)
-                             		  .attr("data-still", imgURL)
-                             		  .attr("data-animate", gifURL)
+    		var cityImage = $("<img>").attr("src", imgURL)
+                                      .attr("data-still", imgURL)
+                                      .attr("data-animate", gifURL)
+                              		  .attr("data-state", imgURL).addClass("gif");
+                             		  
+
+
 			cityDiv.prepend(cityImage);
     		$("#cityGifs").prepend(cityDiv);
 
-    		$(".gif").on("click", function() {
+    		// $(".gif").on("click", function() {
+                $(".gif").click(function() {
 				var state = $(this).attr("data-state");
+
                 console.log(this);
-        		if (state === "still") {
-        			$(this).attr("src", $(this).attr("data-animate"));
-        			$(this).attr("data-state", "animate");
-        		} else {
-        			$(this).attr("src", $(this).attr("data-still"));
-        			$(this).attr("data-state", "still");
+                
+                if (state === "still") {
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("data-state", "animate");
+                } else {
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
         		}
 			});
  		}
