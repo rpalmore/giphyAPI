@@ -19,6 +19,7 @@ function createButtons() {
         $(this).css("background-color", "buttonface");
     });
 }
+
 createButtons();
 
 function displayGifs() {

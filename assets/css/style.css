@@ -41,7 +41,6 @@ p {
 	width: 50%;
 	margin-left: 25%;
 	margin-bottom: 20px;
-
 }
 
 button {
@@ -72,6 +71,7 @@ label {
 	color: #000000;
 	font-size: 18px;
 	margin-right: 5px;
+	border-bottom: 1px solid #000000;
 }
 
 #clear {
@@ -81,7 +81,7 @@ label {
     display: inline-block;
 	background-image: url("wrong.png");
     position: relative;
-    left: -20px;
+    left: -30px;
     top: 3px;
 }
 
@@ -91,4 +91,13 @@ label {
   border: 1px solid black;
   opacity: 0.8;
   filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+
+@media screen and (max-width: 640px){
+
+	#clear {
+		visibility: hidden;
+	}
+
 }
