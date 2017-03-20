@@ -1,9 +1,10 @@
 body {
-	background-image: url("../images/Clouds.jpg");
+	background-image: url("../images/Clouds_(5).jpg");
 	background-repeat: no-repeat;
 	background-position: right top;
 	background-attachment: fixed;
 	background-size: cover;
+	background-blend-mode: 
 }
 
 .navbar {
@@ -21,6 +22,11 @@ header, .subhead {
 	text-align: center;
 }
 
+.subhead {
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
 p {
 	font-family: 'Cuprum', sans-serif;
 	background-color: white;
@@ -31,10 +37,6 @@ p {
 	border-left: 1px solid #828285;
 }
 
-.subhead {
-	margin-bottom: 20px;
-	font-size: 20px;
-}
 
 #line {
 	border-bottom: 3px solid #000000;
@@ -43,8 +45,24 @@ p {
 	margin-bottom: 20px;
 }
 
+.transbox {
+  margin: 60px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.8;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
 button {
 	margin: 10px;
+	background-color: #ffffff;
+	padding: 12px;
+	font-size: 16px;
+}
+
+#add-city {
+	padding: 10px;
+	margin-left: 0px;
 }
 
 .gif {
@@ -84,19 +102,10 @@ label {
     top: 3px;
 }
 
-.transbox {
-  margin: 60px;
-  background-color: #ffffff;
-  border: 1px solid black;
-  opacity: 0.8;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
-}
-
 
 @media screen and (max-width: 640px){
 
 	#clear {
 		visibility: hidden;
 	}
-
 }

@@ -22,8 +22,9 @@ function createButtons() {
    $("button").hover(function(){
         $(this).css("background-color", "#7ac943");
         }, function(){
-        $(this).css("background-color", "buttonface");
+        $(this).css("background-color", "white");
     });
+
 }
 
 createButtons();
@@ -80,6 +81,12 @@ $("#add-city").on("click", function(event) {
     var newCity = $("#city-input").val().trim();
     topics.push(newCity);
     createButtons();
+});
+
+$("#add-city").hover(function(){
+    $(this).css("background-color", "#e5aa52");
+    }, function(){
+    $(this).css("background-color", "white");
 });
 
 $("#cityButtons").on("click", ".city", displayGifs);
