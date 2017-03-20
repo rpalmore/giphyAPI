@@ -1,10 +1,15 @@
 body {
-	background-image: url("../images/Clouds_(5).jpg");
+	/*background-image: url("../images/Clouds_(5).jpg");*/
+	/*background-image: url("../images/Old-world-map.jpg");*/
+	/*background-image: url("../images/old_map.jpg");*/
+	/*background-image: url("../images/Wicker_Park.jpg");*/
+	background-image: url("../images/skyline.jpg");
 	background-repeat: no-repeat;
 	background-position: right top;
 	background-attachment: fixed;
 	background-size: cover;
-	background-blend-mode: 
+	background-size: contain; 
+	background-color: #a27fa2;
 }
 
 .navbar {
@@ -58,10 +63,11 @@ button {
 	background-color: #ffffff;
 	padding: 12px;
 	font-size: 16px;
+	border: 1px solid #000000;
 }
 
 #add-city {
-	padding: 10px;
+	padding: 5px;
 	margin-left: 0px;
 }
 
@@ -69,6 +75,7 @@ button {
 	display: inline-block;
 	border: 1px solid #828285;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border: 10px solid #ffffff;
 }
 
 .city {
@@ -78,6 +85,7 @@ button {
 
 #city-input {
 	text-transform: capitalize;
+	border: 1px solid #000000;
 }
 
 .capitalize {

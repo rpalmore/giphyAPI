@@ -12,7 +12,7 @@ var topics = ["San Francisco", "New York City", "Tokyo", "Paris",
 function createButtons() {
     $("#cityButtons").empty();
     for (var i = 0; i < topics.length; i++) {
-        var button = $("<button>");
+        var button = $("<button>" + "&bull;");
         button.addClass("city");
         button.attr("data-name", topics[i]);
         button.text(topics[i]).addClass("capitalize");
@@ -81,12 +81,6 @@ $("#add-city").on("click", function(event) {
     var newCity = $("#city-input").val().trim();
     topics.push(newCity);
     createButtons();
-});
-
-$("#add-city").hover(function(){
-    $(this).css("background-color", "#e5aa52");
-    }, function(){
-    $(this).css("background-color", "white");
 });
 
 $("#cityButtons").on("click", ".city", displayGifs);
