@@ -45,7 +45,8 @@ function displayGifs() {
 			cityDiv.prepend(cityImage);
     		$("#cityGifs").prepend(cityDiv);
 
-    		$(".gif").on("click", function() {
+
+            $(".gif").on("click", function() {
 				var state = $(this).attr("data-state");
                 console.log(this);
         		if (state === "still") {
