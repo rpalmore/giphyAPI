@@ -92,7 +92,3 @@ label {
   opacity: 0.8;
   filter: alpha(opacity=60); /* For IE8 and earlier */
 }
-
-#city-buttons {
-	background-color: #000000;
-}

@@ -39,11 +39,14 @@ function displayGifs() {
     		var imgURL = results[i].images.fixed_height_still.url;
     		var gifURL = results[i].images.fixed_height.url;
     		var cityImage = $("<img>").attr("src", imgURL).addClass("gif")
-                              		  .attr("data-state", imgURL)
-                             		  .attr("data-still", imgURL)
-                             		  .attr("data-animate", gifURL)
+                                      .attr("data-still", imgURL)
+                                      .attr("data-animate", gifURL)
+                                      .attr("data-state", "still");
+
 			cityDiv.prepend(cityImage);
     		$("#cityGifs").prepend(cityDiv);
+
+        }
 
     		$(".gif").on("click", function() {
 				var state = $(this).attr("data-state");
@@ -56,7 +59,6 @@ function displayGifs() {
         			$(this).attr("data-state", "still");
         		}
 			});
- 		}
     });
 }
 
