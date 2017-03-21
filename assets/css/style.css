@@ -1,21 +1,12 @@
 body {
-	/*background-image: url("../images/Clouds_(5).jpg");*/
-	/*background-image: url("../images/Old-world-map.jpg");*/
-	/*background-image: url("../images/old_map.jpg");*/
-	/*background-image: url("../images/Wicker_Park.jpg");*/
 	background-image: url("../images/Skyline2.jpg");
-/*	background-image: url("../images/Skyline3.jpg");
-*/	background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	background-position: right top;
 	background-attachment: fixed;
 	background-size: cover;
 	background-size: contain; 
-	background-color: #a27fa2;
-	background-color: #fdd865;
-	background-color: #9c3c17;
 	background-color: #f6812f;
-	/*background-color: #f9ae46;
-	background-color: #d48b97;*/
+
 }
 
 .navbar {
