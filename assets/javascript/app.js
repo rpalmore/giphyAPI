@@ -86,7 +86,7 @@ $("#add-city").on("click", function(event) {
 $("#cityButtons").on("click", ".city", displayGifs);
 
 /* I really wanted to add a "clear" button to search bar. Method included
-below works fine until you get to xs viewport. I solved for this by removing
+below works fine until you get to xs viewport. I solved for this by adjusting
 the button at that viewport in CSS. */
 
 $("#clear").click(function(event){

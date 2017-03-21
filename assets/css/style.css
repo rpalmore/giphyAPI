@@ -111,6 +111,8 @@ label {
 @media screen and (max-width: 640px){
 
 	#clear {
-		visibility: hidden;
+		left: 255px;
+    	top: -25px;
+
 	}
 }
