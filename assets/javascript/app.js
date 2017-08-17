@@ -1,13 +1,12 @@
-/* I chose location-based gifs for this assignment. Not all results
-clearly illustrate a place (some are a bit random), but I thought 
-it was a fun theme. */
+/* I chose location-based gifs for this assignment. Some are a bit random, 
+but it's a fun theme. */
 
 var topics = ["San Francisco", "New York City", "Tokyo", "Paris", 
               "London", "Chicago", "Amsterdam", "Copenhagen",
               "Detroit", "Italy", "Moscow", "Hawaii", "The Moon", "Singapore",
               "Mexico City", "Area 51"]
 
-// I wanted to cap first letter of each user input word also.
+// Cap first letter of each user input word
 
 function createButtons() {
     $("#cityButtons").empty();
@@ -58,10 +57,6 @@ function displayGifs() {
 
         }
 
-/* It took me ages to figure out that I had to close this for loop before the 
-click function below. I originally had for loop including click function, but 
-that caused a bug with images going to the DOM and disrupted still/animate toggle. */
-
     		$(".gif").on("click", function() {
 				var state = $(this).attr("data-state");
                 console.log(this);
@@ -84,10 +79,6 @@ $("#add-city").on("click", function(event) {
 });
 
 $("#cityButtons").on("click", ".city", displayGifs);
-
-/* I really wanted to add a "clear" button to search bar. Method included
-below works fine until you get to xs viewport. I solved for this by adjusting
-the button at that viewport in CSS. */
 
 $("#clear").click(function(event){
     event.preventDefault();
