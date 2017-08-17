@@ -1,6 +1,6 @@
 # Giphy API
 
-Order your dream veggie burger and then ... devour it! Still hungry? You can reorder what you just ate, or try a new burger.
+A dynamic web page that populates with travel-themed gifs.
 
 * [See it live on Heroku!](https://boiling-wildwood-30671.herokuapp.com/)
 
